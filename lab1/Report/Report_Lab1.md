@@ -31,6 +31,27 @@
 
 ## Implementation
 
+&ensp; Let's analyze how the SOLID principles are applied in my project:
+
+* Single Responsibility Principle (SRP):
+        ClothingOptionsGenerator class: This class has a single responsibility, which is to generate clothing options.
+        CustomerOptionsGenerator class: This class also has a single responsibility, which is to generate customer options.
+        ClothingFactory class: It has a single responsibility to create clothing objects.
+        Customer and OnlineCustomer classes: These classes are responsible for representing customers and processing payments.
+        The other classes also respects SRP.
+
+* Open-Closed Principle (OCP):
+        My project demonstrates the Open-Closed Principle to some extent. I  extended the behavior of the CardPayer interface by introducing the PayVisa interface, which adds Visa-specific payment methods. This allows  to create new implementations of CardPayer without modifying existing code.
+
+* Liskov Substitution Principle (LSP):
+        The OnlineCustomer class, which extends the Customer class, maintains the Liskov Substitution Principle. It is a subtype of Customer, and instances of OnlineCustomer can be used interchangeably with Customer instances without affecting the correctness of the program.
+
+* Interface Segregation Principle (ISP):
+        I have separate interfaces, CardPayer and CashPayer, which are focused on specific payment methods. This adheres to the Interface Segregation Principle as clients can depend on the specific interfaces they need.
+
+* Dependency Inversion Principle (DIP):
+        High-level modules depend on abstractions:  high-level modules (e.g., Customer and MainApp) depend on the abstractions (CashPayer and CardPayer) for payment processing. This aligns with the DIP.
+
 &ensp; 
 
 ## Output:

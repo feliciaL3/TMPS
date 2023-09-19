@@ -31,6 +31,8 @@
 
 ## Implementation
 
+&ensp; My project focuses on a clothing store simulation where customers interact with clothing options and make payments using different methods. The project demonstrates the application of several SOLID principles to ensure code quality, maintainability, and flexibility.
+
 &ensp; Let's analyze how the SOLID principles are applied in my project:
 
 * Single Responsibility Principle (SRP):
@@ -40,27 +42,110 @@
         Customer and OnlineCustomer classes: These classes are responsible for representing customers and processing payments.
         The other classes also respects SRP.
 
+**EXAMPLE** 
+`````` java
+package domain.factory;
+
+import domain.models.Clothing;
+
+public class ClothingFactory {
+    public Clothing createClothing(String store, String string, String color, double price) {
+        return new Clothing(store, string, color, price );
+    }
+}
+
+``````
+
 * Open-Closed Principle (OCP):
         My project demonstrates the Open-Closed Principle to some extent. I  extended the behavior of the CardPayer interface by introducing the PayVisa interface, which adds Visa-specific payment methods. This allows  to create new implementations of CardPayer without modifying existing code.
+
+**EXAMPLE**
+
+``````java
+package domain.models;
+
+public interface PayVisa extends CardPayer {
+    // Constants for Visa card related information
+    String VISA_CARD_TYPE = "Visa";
+    String VISA_ISSUER = "Visa Inc.";
+
+    // Method to get the card type
+    String getCardType();
+
+    // Method to get the card issuer
+    String getCardIssuer();
+
+    void authorizeVisaTransaction();
+    void processVisaRefund();
+}
+
+///////open closed principle by extending class CardPayer
+
+``````
 
 * Liskov Substitution Principle (LSP):
         The OnlineCustomer class, which extends the Customer class, maintains the Liskov Substitution Principle. It is a subtype of Customer, and instances of OnlineCustomer can be used interchangeably with Customer instances without affecting the correctness of the program.
 
+**EXAMPLE**
+
+``````java
+package domain.models;
+
+public class OnlineCustomer extends Customer {
+
+    public OnlineCustomer(String name, String email) {
+        super(name, email);
+    }
+
+    @Override
+    public void payCard(Clothing clothing) {
+        super.payCard(clothing);
+        System.out.println(this.getName() + " paid with his Visa Card.");
+    }
+
+}
+
+//Liskov Substitution Principle
+``````
+
 * Interface Segregation Principle (ISP):
         I have separate interfaces, CardPayer and CashPayer, which are focused on specific payment methods. This adheres to the Interface Segregation Principle as clients can depend on the specific interfaces they need.
 
+**EXAMPLE**
+
+``````java
+package domain.models;
+
+public interface CardPayer {
+    void payCard(Clothing clothing);
+}
+
+//interface segregation
+``````
+
 * Dependency Inversion Principle (DIP):
-        High-level modules depend on abstractions:  high-level modules (e.g., Customer and MainApp) depend on the abstractions (CashPayer and CardPayer) for payment processing. This aligns with the DIP.
+        High-level modules depend on abstractions:  high-level modules (e.g., Customer and MainApp) depend on the abstractions (CashPayer and CardPayer) for payment processing. This aligns with the DIP.S
 
 &ensp; 
 
 ## Output:
 
-![image](https://github.com/feliciaL3/TMPS/assets/113386223/918f2e1b-e939-4fba-a813-baed96a5b41b)
+```` java 
+Welcome to the Clothing Store!
+-------------------------------
 
+Emma Smith is looking at the following clothing:
+Clothing from store Zara, size M, color green, and price 120.0 dollars
 
+Michael Johnson is looking at the following clothing:
+Clothing from store Gucci, size S, color blue, and price 134.0 dollars
+
+Emma Smith decided to pay with a card.
+Michael Johnson decided to pay with cash.
+
+````
 
 ## Conclusions / Screenshots / Results
-&ensp; 
+&ensp;  My project exemplifies good software design practices by applying SOLID principles. These principles promote maintainability, flexibility, and scalability in software development. By continuing to follow these principles and seeking opportunities for improvement, the project can evolve into a robust and adaptable software system.
 
 

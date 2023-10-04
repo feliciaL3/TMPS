@@ -1,9 +1,10 @@
 package domain.models;
 
-public class Customer implements CashPayer, CardPayer {
-    private String name;
-    private String email;
-    private Clothing clothingPurchased;
+
+public class Customer {
+    public String name;
+    public String email;
+    public Clothing clothingCustomerChoice;
 
     public Customer(String name, String email) {
         this.name = name;
@@ -14,16 +15,14 @@ public class Customer implements CashPayer, CardPayer {
         return name;
     }
 
-    @Override
     public void payCard(Clothing clothing) {
-        this.clothingPurchased = clothing;
-        System.out.println(name + " bought " + clothing.toString() + ". ");
+        this.clothingCustomerChoice = clothing;
+        System.out.println(name + " paid " + clothing.toString() + " with a card.");
     }
 
-    @Override
     public void payCash(Clothing clothing) {
-        this.clothingPurchased = clothing;
-        System.out.println(name + " bought " + clothing.toString() + ".");
+        this.clothingCustomerChoice = clothing;
+        System.out.println(name + " paid " + clothing.toString() + " with cash.");
     }
 
     @Override
@@ -31,8 +30,9 @@ public class Customer implements CashPayer, CardPayer {
         return "\nCustomer{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", clothingPurchased=" + (clothingPurchased != null ? clothingPurchased : "None") +
+                ", clothingCustomerChoice=" + (clothingCustomerChoice != null ? clothingCustomerChoice : "None") +
                 '}';
     }
-
 }
+
+//liskov with online customer

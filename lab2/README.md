@@ -13,12 +13,12 @@
 ## Laboratory notes
 
 
-* 4 creational design patterns were implemented: Singleton, Factory, Prototype and Builder.
+* 4 creational design patterns were implemented: ``` Singleton, Factory, Prototype and Builder.```
 
 ## Implementation:
 
 ### 1. Singleton design pattern:
-<p>I have implemented the Singleton pattern in the ClassMaster class, ensuring that only one instance of ClassMaster can exist. This is achieved through a private constructor and a static method getInstance that returns the single instance. </p>
+I have implemented the ```Singleton pattern ```in the ```ClassMaster ```class, ensuring that only one instance of ClassMaster can exist. This is achieved through a private constructor and a static method ```getInstance``` that returns the single instance. </p>
 
 ``````java
 public class ClassMaster {
@@ -39,7 +39,7 @@ public class ClassMaster {
 
 
 ### 2. Prototype Design Pattern:
-<p> I have implemented the Prototype pattern in the TeacherPrototype class and its subclasses (FitnessTeacher, MathTeacher, and ArtTeacher). The clone method in TeacherPrototype allows to create new teacher objects by cloning an existing one. I demonstrated this by cloning teachers in your Main class. </p>
+I have implemented the ```Prototype pattern ```in the ```TeacherPrototype``` class and its subclasses (FitnessTeacher, MathTeacher, and ArtTeacher). The clone method in TeacherPrototype allows to create new teacher objects by cloning an existing one. I demonstrated this by cloning teachers in your Main class. 
 
 ``````java
 public abstract class TeacherPrototype implements Cloneable {
@@ -57,9 +57,19 @@ public abstract class TeacherPrototype implements Cloneable {
     // ...
 }
 ``````
+``````java
+        // Clone another teacher using the Prototype pattern
+        TeacherPrototype originalTeacher2 = new MathTeacher("D John Doe", "math");
+        TeacherPrototype clonedTeacher2 = originalTeacher2.clone();
+
+        // Verify that the cloned teacher works as expected
+        System.out.println("Cloned Teacher 2 Info:");
+        System.out.println("    Name: " + clonedTeacher2.getName());
+        System.out.println("    Type: " + clonedTeacher2.getType());
+``````
 
 ### 3. Factory Design Pattern:
-<p>I have implemented the Factory pattern in the StudentFactory class. It provides a method getStudent that creates and returns instances of different types of students (e.g., MathStudent, HonorStudent, etc.) based on the specified characteristics. </p>
+I have implemented the ```Factory pattern``` in the ```StudentFactory``` class. It provides a method getStudent that creates and returns instances of different types of students (e.g., MathStudent, HonorStudent, etc.) based on the specified characteristics.
 
 ``````java
 public class StudentFactory {
@@ -92,12 +102,14 @@ public interface Student {
     public int getSkills();
     public int getSkillLevel();
 
-}``````
+}
+
+``````
 
 
 ### 4. Builder Design Pattern:
 
-<p>I have implemented the Builder pattern in the Class class using the nested ClassBuilder class. It allows  to construct complex Class objects with various attributes (e.g., students and teachers) step by step and then build the final object. </p>
+I have implemented the ```Builder pattern``` in the Class class using the nested ```ClassBuilder``` class. It allows  to construct complex Class objects with various attributes (e.g., students and teachers) step by step and then build the final object. 
 
 ``````java
 public class Class {

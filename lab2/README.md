@@ -63,21 +63,19 @@ public abstract class TeacherPrototype implements Cloneable {
 
 ``````java
 public class StudentFactory {
-    public Student getStudent(String name, Characteristic charact){
-        if (charact == Characteristic.MATH){
-            return new MathStudent(name, Characteristic.MATH, 10, 3, 100);
+    public Student getStudent(String name, Characteristic charact) {
+        switch (charact) {
+            case MATH:
+                return new MathStudent(name, charact, 10, 3, 100);
+            case HON:
+                return new HonorStudent(name, charact, 10, 10, 100);
+            case ATHL:
+                return new AthleticStudent(name, charact, 7, 1, 90);
+            case ART:
+                return new ArtisticStudent(name, charact, 7, 1, 100);
+            default:
+                return null;
         }
-        if (charact == Characteristic.HON){
-            return new HonorStudent(name, Characteristic.HON, 10, 10, 100);
-        }
-        if (charact == Characteristic.ATHL){
-            return new AthleticStudent(name, Characteristic.ATHL, 7, 1, 90);
-        }
-        if (charact == Characteristic.ART){
-            return new ArtisticStudent(name, Characteristic.ART, 7, 1, 100);
-        }
-
-        return null;
     }
 }
 ``````
@@ -94,8 +92,7 @@ public interface Student {
     public int getSkills();
     public int getSkillLevel();
 
-}
-``````
+}``````
 
 
 ### 4. Builder Design Pattern:

@@ -1,7 +1,7 @@
 
 import studentypes.*;
 
-
+// Factory method to create Student objects based on characteristics
 public class StudentFactory {
     public Student getStudent(String name, Characteristic charact) {
         switch (charact) {
@@ -18,3 +18,10 @@ public class StudentFactory {
         }
     }
 }
+
+// The Factory Design Pattern is a creational design pattern that provides an interface 
+// for creating objects in a super class but allows subclasses 
+// to alter the type of objects that will be created. 
+
+//The key idea of the Factory Pattern is to encapsulate the object creation logic in a separate class or method, 
+//allowing the client code to request objects without needing to know the details of how they are created. 

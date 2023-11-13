@@ -12,6 +12,20 @@
 
 - Use 3 behavioral design patterns for object instantiation in a sample project.
 
+## Theoretical Considerations
+ Structural design patterns are a category of design patterns that focus on the composition of classes and objects to form larger structures and systems. They provide a way to organize objects and classes in a way that is both flexible and efficient, while allowing for the reuse and modification of existing code. Structural design patterns address common problems encountered in the composition of classes and objects, such as how to create new objects that inherit functionality from existing objects, how to create objects that share functionality without duplicating code, or how to define relationships between objects in a flexible and extensible way.
+
+    Some examples of from this category of design patterns are:
+
+    Adapter
+    Bridge
+    Composite
+    Decorator
+    Facade
+    Flyweight
+    Proxy
+
+
 ## Implementation
 
 I used 3 Behavioral Design Patterns ```Command```, ```Observer``` and ```Mediator```.

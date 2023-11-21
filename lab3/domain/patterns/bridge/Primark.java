@@ -6,3 +6,5 @@ public class Primark extends Cloth {
         super(manufacturer, model, size, material, stock, price, "Primark specializes in budget-friendly clothing.");
     }
 }
+
+//Primark și ZaraCloth sunt clase concrete care extind Cloth și oferă implementări specifice pentru fiecare brand.

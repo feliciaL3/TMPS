@@ -13,3 +13,8 @@ public abstract class ShoppingCartDecorator {
         return decoratedCart.calculateTotal();
     }
 }
+
+
+//ShoppingCartDecorator definește o interfață comună pentru toți decoratorii prin intermediul metodei calculateTotal()
+//(Decoratorul de Bază):
+// ShoppingCartDecorator este o clasă abstractă care servește ca bază pentru toți ceilalți decoratori specifici 

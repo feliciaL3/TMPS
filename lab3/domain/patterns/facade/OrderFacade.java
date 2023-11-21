@@ -29,7 +29,7 @@ public class OrderFacade {
 
 
 //    OrderFacade acts as a facade by providing a simplified and unified interface for placing an order. 
-//It hides the complexity of creating a shopping cart, applying decorators, calculating costs, and creating an order.
+// It hides the complexity of creating a shopping cart, applying decorators, calculating costs, and creating an order.
 //    OrderFacade encapsulates the steps required to place an order, providing a higher-level interface to clients.
 //    It abstracts away the details of the shopping cart and the application of decorators to the cart, 
-//making it easy for clients to place orders without dealing with these details directly.
+// making it easy for clients to place orders without dealing with these details directly.

@@ -2,7 +2,7 @@ package domain.patterns.facade;
 
 import domain.models.*;
 import domain.patterns.adapter.PaymentProcessor;
-
+// It encapsulates the complex order processing logic 
 public class Order {
     private ShoppingCart cart;
     private PaymentProcessor paymentProcessor;

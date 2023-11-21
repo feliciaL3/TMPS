@@ -5,6 +5,7 @@ import domain.patterns.adapter.*;
 
 public class Main {
     public static void main(String[] args) {
+        /////////////////BRIDGE//////////////////
         // Create and add clothing items to the database
         Cloth primarkCloth = new Primark(new AsosManufacturer(), "Wedding Dress", "XS", "cotton", 5, 50);
         Cloth sheinCloth = new ZaraCloth(new SheinManufacturer(), "Formal Suit", "S", "leather", 15, 25);
@@ -15,10 +16,14 @@ public class Main {
         ShoppingCart cart = new ShoppingCart();
         cart.addItem(new ShoppingCartItem(primarkCloth, 1));
 
-        // Initialize payment processors
+        ////////////////ADAPTER////////////////////////
         PaymentProcessor cashPayment = new CashPayment();
         PaymentAdapter cardPayment = new PaymentAdapter(new CardPaymentGateway());
+        // The PaymentAdapter serves as an adapter, 
+        // allowing the CardPaymentGateway to be used as a PaymentProcessor
 
+
+        /////////////FACADE///////////////////////////
         // Create an order facade
         OrderFacade facade = new OrderFacade();
 

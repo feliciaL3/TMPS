@@ -6,3 +6,6 @@ public class ZaraCloth extends Cloth {
         super(manufacturer, model, size, material, stock, price, "Zara offers trendy and stylish clothing.");
     }
 }
+
+
+//Primark și ZaraCloth sunt clase concrete care extind Cloth și oferă implementări specifice pentru fiecare brand.

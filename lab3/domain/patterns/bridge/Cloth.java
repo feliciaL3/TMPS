@@ -24,7 +24,7 @@ public abstract class Cloth implements Product {
 
     @Override
     public String getDescription() {
-        return "Cloth - Model: " + model + ", Size: " + size +  ", Material: " + material + "]";
+        return "Cloth - Model: " + model + ", Size: " + size +  ", Material: " + material + " ";
     }
 
     @Override
@@ -49,3 +49,7 @@ public abstract class Cloth implements Product {
         this.stock -= amount;
     }
 }
+
+
+///Cloth este o clasă abstractă care extinde interfața abstracției (Product) și conține un membru de tip Manufacturer pentru a ține referința la implementor.
+//Această clasă furnizează implementări comune pentru metodele definite în Product și utilizează implementarea specifică a Manufacturer pentru a obține evaluarea.

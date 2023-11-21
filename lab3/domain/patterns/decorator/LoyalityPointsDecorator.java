@@ -5,6 +5,7 @@ import domain.models.ShoppingCartInterface;
 public class LoyalityPointsDecorator extends ShoppingCartDecorator {
     private int loyaltyPoints;
 
+    //super  is used to refer to the superclass,  the class from which the current class is derived. 
     public LoyalityPointsDecorator(ShoppingCartInterface decoratedCart, int loyaltyPoints) {
         super(decoratedCart);
         this.loyaltyPoints = loyaltyPoints;

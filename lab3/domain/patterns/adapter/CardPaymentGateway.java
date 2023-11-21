@@ -10,9 +10,6 @@ public class CardPaymentGateway {
     }
 
     private String createPaymentRecord(String cardHolderName, String cardNumber, double amount) {
-        // Extract the last four digits of the card number.
-    //    String lastFourDigits = cardNumber.substring(cardNumber.length() - 4);
-    //    return cardHolderName + " paid $" + amount + " using card number ending in " + lastFourDigits;
-        return cardHolderName + " paid $" + amount ;
+        return cardHolderName + " with card paid $" + amount ;
     }
 }

@@ -1,6 +1,8 @@
 //Main.java
 import domain.mediator.SchoolCoordinator;
 import domain.mediator.SchoolMediator;
+
+
 import domain.mediator.Classroom;
 import domain.observer.NotificationCenter;
 import domain.observer.Student;
@@ -17,6 +19,7 @@ public class Main {
 
         Student Maria = new Student("Maria", coordinator);
         Student Vasile = new Student("Vasile", coordinator);
+        Student Ion = new Student("Ion", coordinator);
 
         coordinator.addStudentToClassroom(Maria, Clasa2Room);
         coordinator.addStudentToClassroom(Vasile, Clasa2Room);
@@ -31,6 +34,7 @@ public class Main {
 
         notificationCenter.addObserver(Maria);
         notificationCenter.addObserver(Vasile);
+        notificationCenter.addObserver(Ion);
         notificationCenter.makeAnnouncement("Attention students: There will be a scheduled maintenance tonight.");
 
         notificationCenter.removeObserver(Maria);

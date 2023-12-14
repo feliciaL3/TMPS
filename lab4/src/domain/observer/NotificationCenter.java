@@ -22,8 +22,13 @@ public class NotificationCenter {
 
     // Notifies all registered observers by calling their notify method with the announcement.
     public void makeAnnouncement(String announcement) {
+        // Iterate through each observer and notify them of the announcement.
         for (SchoolObserver observer : observers) {
             observer.notify(announcement);
         }
     }
 }
+
+
+//The NotificationCenter acts as the subject,
+// keeping track of all its observers and notifying them of any announcements.

@@ -19,7 +19,6 @@ public class SchoolCoordinator implements SchoolMediator {
     public void addStudentToClassroom(Student student, Classroom classroom) {
         classroom.addStudent(student);
     }
-    @Override
     public void removeStudentFromClassroom(Student student, Classroom classroom) {
         classroom.removeStudent (student);
     }

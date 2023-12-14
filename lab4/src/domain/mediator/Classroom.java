@@ -14,10 +14,12 @@ public class Classroom {
         this.name = name;
     }
 
-    // Method to broadcast a public message to all students in the classroom, except the sender.
+    // Method to make a public message to all students in the classroom, except the sender.
     public void PublicMessage(String message, Student sender) {
         for (Student student : members) {
+            // Check if the current student is not the sender.
             if (!student.equals(sender)) {
+                // Update the student with the received message.
                 student.update(message);
             }
         }

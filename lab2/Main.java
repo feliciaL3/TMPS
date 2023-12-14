@@ -1,6 +1,5 @@
 import studentypes.*;
 import teachers.*;
-import teachers.FitnessTeacher;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,6 +34,10 @@ public class Main {
         // Clone a teacher using the Prototype pattern
         TeacherPrototype originalTeacher = new FitnessTeacher("D Irina Polerescu", "fitness");
         TeacherPrototype clonedTeacher = originalTeacher.clone();
+        //originalTeacher is an instance of FitnessTeacher, 
+        //and the clone method creates a copy of this teacher, 
+        //resulting in clonedTeacher. Both originalTeacher and clonedTeacher 
+        //share the same name and type, but they are distinct objects.
 
         // Create a Class instance using the ClassBuilder pattern
         Class newClass = new Class.ClassBuilder("Clasa 8-a ", classMaster1)

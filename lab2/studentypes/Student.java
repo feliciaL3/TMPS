@@ -1,5 +1,5 @@
 package studentypes;
-
+// this Student interface defines a set of methods that any class implementing it must provide. 
 public interface Student {
     public String getName();
     public void setGrades(int newGrades);
